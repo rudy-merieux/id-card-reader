@@ -19,10 +19,14 @@ import tempfile
 from datetime import datetime
 from pathlib import Path
 from typing import Any
+from pathlib import Path
 
 import mlflow
 import yaml
 from ultralytics import YOLO
+
+
+ROOT_DIR = Path(__file__).resolve().parent.parent
 
 
 def parse_args() -> argparse.Namespace:
@@ -55,7 +59,7 @@ def log_model_artifact(pt_path: Path, alias: str) -> None:
 def main() -> None:
     args = parse_args()
     
-    mlflow.set_tracking_uri("/Users/rudy/personnals_projects/id-card-reader2/mlflow")
+    mlflow.set_tracking_uri(f"{ROOT_DIR}/mlflow")
 
     save_dir = Path(args.save_dir)
     save_dir.mkdir(parents=True, exist_ok=True)
@@ -74,8 +78,8 @@ def main() -> None:
         })
 
         data_dict = {
-            "train": "/Users/rudy/personnals_projects/id-card-reader2/datasets/splited/images/train",
-            "val": "/Users/rudy/personnals_projects/id-card-reader2/datasets/splited/images/val",
+            "train": f"{ROOT_DIR}/datasets/clean_seg/images/train",
+            "val": f"{ROOT_DIR}/datasets/clean_seg/images/val",
             "nc": 1,
             "names": ["id_card"]
         }

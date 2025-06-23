@@ -2,11 +2,15 @@
 datasets/raw/*
 datasets/kie/*
 datasets/coco/*
+datasets/clean_seg/*
 
 # MLOps
 mlflow/*
 runs/*
 *.pt
+
+# Others
+.DS_Store
 
 
 # Byte-compiled / optimized / DLL files
