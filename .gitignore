@@ -3,6 +3,11 @@ datasets/raw/*
 datasets/kie/*
 datasets/coco/*
 
+# MLOps
+mlflow/*
+runs/*
+*.pt
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

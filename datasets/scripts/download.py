@@ -17,7 +17,7 @@ COCO_DIR = Path(__file__).resolve().parent.parent / "coco"
 RAW_DIR.mkdir(parents=True, exist_ok=True)
 COCO_DIR.mkdir(parents=True, exist_ok=True)
 
-DATASETS = ["midv500", "midv-2019", "midv-2020"]
+DATASETS = ["midv500"] #, "midv-2019", "midv-2020"]
 
 for name in DATASETS:
     print(f"\n=== {name.upper()} ===")
